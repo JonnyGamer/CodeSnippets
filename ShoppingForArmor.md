@@ -1,7 +1,19 @@
+You asked:
+```
+1: Is there any way to shorten this code, so it wouldn't be annoying to add new items to the list? 
+```
+
+There is a way!
+
+Here is your new shop function!
+
+We can discuss this together.
+
 ```swift
 func shop() {
     while true {
         
+        // Asks whether you want to buy armor or weapons
         print("What type of gear are you looking for?")
         print("""
         1. Armor
@@ -19,6 +31,7 @@ func shop() {
             ("Plot Armor", 100000, 800)
         ]
         
+        // Lists the armor items
         func listArmor() {
             print("What would you like to buy?")
             for i in 0..<armor.count {
@@ -27,6 +40,7 @@ func shop() {
             print("Type Enter to go back")
         }
         
+        // Determines whether you can actually make an armor purchase
         func attemptToPurchaseArmor(item: Int) {
             if item == 0 || item > armor.count {
                 print("Our list isn't that big.")
@@ -44,12 +58,12 @@ func shop() {
             }
         }
         
+        // You have selected to view the armor category
         if armorweapons == "1" {
             listArmor()
             
             let armorWanted = ericReadLine()
             attemptToPurchaseArmor(item: Int(armorWanted) ?? 0)
-            
         }
         
     }
